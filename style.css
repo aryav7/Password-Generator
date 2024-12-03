@@ -1,0 +1,235 @@
+body{
+    font-family: Arial, sans-serif;
+    background-image:  url('./1.png') ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+  padding: 20px 30px;
+  border-radius: 40px;
+  border-radius: 40px;
+  background: rgba(242, 232, 232, 0.75);
+    box-shadow: 0 4px 6px #00000082;
+  max-width: 440px;
+  width: 100%;
+  height: 75vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+}
+h1{
+    font-size: 32px;
+    color: darkred;
+    margin-bottom: 25px;
+}
+.output-container{
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#password-output {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    width: 100%;
+  }
+  #copy-btn{
+    border: 1px solid #b70000;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: -15px;
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+  }
+  #copy-btn:hover{
+    background-color: #ab0101;
+  }
+  #copy-status {
+position: absolute;
+
+padding: 5px;
+
+    top: 100%; /* Place it right below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(242, 238, 238);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin-top: 8px;
+  }
+  
+  .box{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin-top: -15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .box p{
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    color: darkred;
+  }
+  .length-inc-dec{
+    appearance: none;
+    width: 100%;
+    height: 1rem;
+    cursor: pointer;
+    background-color: rgb(96, 4, 4);
+    border-radius: 1rem;
+    margin-top: 5px;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(45deg, rgb(234, 182, 182), #D81B60, #C62828);
+    background-repeat: no-repeat;
+    width: 90%;
+  }
+  .length-inc-dec::-webkit-slider-thumb{
+    appearance: none;
+    position: relative;
+    background-color: rgb(91, 1, 1);
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+    /* margin-top: -3px; */
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.75);
+    transition: all 200ms ease-in;
+}
+
+ .length-inc-dec:active{
+    outline: 3px solid rgb(227, 97, 97);
+}
+
+.length-inc-dec::-webkit-slider-thumb:hover{
+    background-color: darkred;
+    outline: 2px solid rgb(240, 233, 233);
+    box-shadow: 0 0 25px 5px rgba(121, 120, 118, 0.8);
+}
+.include-section{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 10px;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    color: darkred;
+}
+input[type="checkbox"] {
+  appearance: none; /* Removes default style */
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(119, 13, 9);
+  border-radius: 40px; /* Makes it circular */
+  cursor: pointer;
+  position: relative;
+  display: inline-block; /* Aligns checkbox properly */
+  vertical-align: middle; /* Ensures alignment with text */
+  margin-right: 8px; /* Space between checkbox and text */
+}
+
+/* Checked State Styling */
+input[type="checkbox"]:checked {
+  background-color: rgb(241, 235, 235);
+}
+
+/* Checkmark Styling */
+input[type="checkbox"]:checked::before {
+  content: '✓';
+  position: absolute;
+  color: rgb(230, 22, 3);
+  font-size: 1.05rem;
+  font-weight: 600;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Centers the checkmark */
+}
+
+/* Label Styling for Text */
+.include-section label {
+  font-size: 16px;
+  color: #6d0202; /* Adjust text color */
+  font-weight: bold;
+  display: flex;
+  align-items: center; /* Aligns text with checkbox */
+  margin-bottom: 5px; /* Adds spacing between items */
+}
+#generate-btn{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: darkred;
+  color: white;
+  font-weight: 600;
+  font-size: medium;
+  width:50%;
+  display: block;
+  cursor: pointer;
+  margin: auto;
+}
+
+.strength-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-left: 5px;
+  font-weight: 600;
+  font-size: larger;
+  color: rgb(133, 9, 9);
+}
+
+#strength-meter {
+  flex: 2;
+  height: 15px;
+  background-color: lightgray;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+#strength-meter div {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+#strength-meter .weak {
+  background: linear-gradient(45deg, red, darkred);
+  width: 33%;
+
+}
+
+#strength-meter .medium {
+  background: linear-gradient(30deg, yellow, rgb(224, 170, 8));
+  width: 66%;
+}
+
+#strength-meter .strong {
+  background: linear-gradient(30deg, rgb(4, 224, 66), rgb(2, 121, 31));
+  width: 100%;
+}
+
+#strength-label {
+  font-size: 15px;
+  color: darkred;
+  margin-top: 5px;
+}
