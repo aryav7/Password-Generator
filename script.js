@@ -22,6 +22,11 @@ document.getElementById("generate-btn").addEventListener("click", () => {
     includeNumbers
   );
 });
+document.getElementById("length").addEventListener("input", () => {
+  const lengthValue = document.querySelector(".box p:last-child");
+  const lengthSlider = document.getElementById("length");
+  lengthValue.textContent = `Length: ${lengthSlider.value}`;
+});
 
 document.getElementById("copy-btn").addEventListener("click", () => {
     const password = document.getElementById("password-output").value;
